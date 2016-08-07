@@ -2,8 +2,10 @@ import React from 'react'
 
 import { Route, Link } from 'react-router';
 
-import { createStore, combineReducers } from 'redux'
-import LoginContainer from '../containers/LoginContainer'
+import { createStore, combineReducers } from 'redux';
+
+import LoginContainer from '../containers/LoginContainer';
+import DashboardContainer from '../containers/DashboardContainer';
 
 
 class App extends React.Component {
@@ -12,6 +14,7 @@ class App extends React.Component {
 
     return (
         <LoginContainer />
+        // <DashboardContainer />
     )
   }
 }

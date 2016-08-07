@@ -28,10 +28,16 @@ router.post('/login', async (ctx, next) => {
     await middleware.call(this, ctx, next)
 })
 
-router.get('/logout', async (ctx, newxt) => {
+router.get('/logout', async (ctx, newt) => {
     ctx.logout()
     ctx.body = {
         "status" : 200
+    }
+})
+
+router.get('/status', async (ctx, next) => {
+    ctx.body = {
+        "isLogin" : ctx.isAuthenticated()
     }
 })
 
