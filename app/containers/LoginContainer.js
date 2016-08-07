@@ -6,7 +6,7 @@ class LoginContainer extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         console.log('submit')
-        this.props.dispatch(submitForm({username:'test', password :'test'}))   
+        this.props.dispatch(submitForm({username:this.refs.username.value, password :this.refs.password.value}))   
     }
     
     render() {
@@ -41,10 +41,10 @@ class LoginContainer extends React.Component {
                     <div className="login-content">
                         <form  className="margin-bottom-0" onSubmit={this.onSubmit.bind(this)}>
                             <div className="form-group m-b-15">
-                                <input type="text" className="form-control input-lg" placeholder="Email Address"  defaultValue="test"/>
+                                <input type="text" className="form-control input-lg" placeholder="Email Address"  defaultValue="test" ref='username'/>
                             </div>
                             <div className="form-group m-b-15">
-                                <input type="password" className="form-control input-lg" placeholder="Password" defaultValue="test"/>
+                                <input type="password" className="form-control input-lg" placeholder="Password" defaultValue="test" ref='password'/>
                             </div>
                             <div className="checkbox m-b-30">
                                 <label>

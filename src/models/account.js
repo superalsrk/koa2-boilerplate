@@ -27,10 +27,10 @@ Account.verify = async function(username, password) {
     if(account == null || account.length != 1) {
         return null;
     } else{
-        if(account[0].password != password) {
-            return null;
-        } else {
+        if((account[0].password == password) && (account[0].username == username)) {
             return account[0];
+        } else {
+            return null;
         }
     }
 }
