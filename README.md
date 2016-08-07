@@ -22,7 +22,7 @@ $ npm run start
 
 + Login Page
 
-![Login Page](http://box-images.qiniudn.com/koa-2-login-osx.jpeg)
+![Login Page](http://box-images.qiniudn.com/koa-2-login-osx.jpeg?v=1)
 
 
 ### Structure
