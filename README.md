@@ -10,6 +10,9 @@ This boilerplate shows ways to
 + Serve static files in Koa2
 + Integrate with Redux App
 
+### Preview
+
+[Online Demo](http://koa2-boilerplate.tarax.cn)
 
 ### Usage
 

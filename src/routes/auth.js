@@ -42,6 +42,3 @@ router.get('/status', async (ctx, next) => {
 })
 
 export default router;
-
-
-
