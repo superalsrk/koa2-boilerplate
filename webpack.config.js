@@ -1,20 +1,35 @@
 var webpack = require('webpack');
+var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var path = require('path');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-    // 'webpack-hot-middleware/client',
-    './app/index',
-  ],
+ 
+  entry: {
+    main : './app/index',
+    vendor : [
+      'react',
+      'redux',
+      'react-redux',
+      'react-dom',
+      'jquery'
+    ]
+  },
   output: {
     path: path.join(__dirname, 'src/public/assets'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: 'http://localhost:3000/static/',
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
+    
+     new webpack.optimize.CommonsChunkPlugin('vendor', './vendor.bundle.js'),
+     new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        //supresses warnings, usually from module minification
+        warnings: false
+      }
+    })
+    
   ],
   module: {
     loaders: [
@@ -24,6 +39,16 @@ module.exports = {
         exclude: /node_modules/,
         include: __dirname
       },
+      {
+        test: /\.(css|less)$/,
+        loader: 'null'
+      },
+      { test: /\.woff2?$/, loader: 'null' },
+      { test: /\.ttf$/, loader: 'null' },
+      { test: /\.eot$/, loader: 'null' },
+      { test: /\.svg$/, loader: 'null' },
+      { test: /\.(png|jpg|jpeg|gif|webp)$/i, loader: 'url?limit=200' },
+      { test: /\.json$/, loader: 'json' }
     ],
   },
   resolve: {
