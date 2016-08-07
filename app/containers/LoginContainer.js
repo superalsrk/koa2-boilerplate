@@ -1,8 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { submitForm } from '../actions';
 
 class LoginContainer extends React.Component {
-
-     render() {
+    onSubmit(event) {
+        event.preventDefault();
+        console.log('submit')
+        this.props.dispatch(submitForm({username:'test', password :'test'}))   
+    }
+    
+    render() {
         return (
         
             <div className="login login-with-news-feed">
@@ -32,12 +39,12 @@ class LoginContainer extends React.Component {
                     </div>
 
                     <div className="login-content">
-                        <form action="index.html" method="POST" className="margin-bottom-0">
+                        <form  className="margin-bottom-0" onSubmit={this.onSubmit.bind(this)}>
                             <div className="form-group m-b-15">
-                                <input type="text" className="form-control input-lg" placeholder="Email Address" />
+                                <input type="text" className="form-control input-lg" placeholder="Email Address"  defaultValue="test"/>
                             </div>
                             <div className="form-group m-b-15">
-                                <input type="text" className="form-control input-lg" placeholder="Password" />
+                                <input type="password" className="form-control input-lg" placeholder="Password" defaultValue="test"/>
                             </div>
                             <div className="checkbox m-b-30">
                                 <label>
@@ -62,4 +69,4 @@ class LoginContainer extends React.Component {
      } 
 }
 
-export default LoginContainer
+export default connect()(LoginContainer)
