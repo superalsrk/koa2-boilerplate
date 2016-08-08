@@ -4,9 +4,9 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "st": "webpack-dev-server --progress --colors --hot --content-base ./server/public --config ./webpack.config.js",
-    "start": "webpack | nodemon start.js",
-    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js"
+    "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js",
+    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js",
+    "start": "nodemon start.js"
   },
   "keywords": [
     "koa2-boilerplate",

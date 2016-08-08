@@ -16,7 +16,7 @@ const auth = (state = [], action) => {
                     if(data.status == 400) {
                         alert('Login errro, username/password is test/test')
                     } else {
-                        alert('Login Success')
+                        window.location.hash='main'
                     }
                 },
                 xhrFields: {

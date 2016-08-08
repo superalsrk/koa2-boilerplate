@@ -14,7 +14,7 @@ class DashboardContainer extends React.Component {
             <div>
             <Header/>
             <Leftbar/>
-            <div class="sidebar-bg"></div>
+            <div className="sidebar-bg"></div>
             
             </div>
         )

@@ -8,13 +8,15 @@ import { createStore, compose, combineReducers } from 'redux';
 import configureStore from './store/configureStore'
 import App from './containers/App'
 
-const store = configureStore()
+
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+
+const store = configureStore();
+const history = createBrowserHistory();
 
 render(
   <Provider store={store}>
-
-      <App />
-    
+      <App {...{ history }} />
   </Provider>,
   document.getElementById('page-container')
 )
