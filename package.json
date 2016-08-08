@@ -4,7 +4,9 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "start": "webpack | nodemon start.js"
+    "st": "webpack-dev-server --progress --colors --hot --content-base ./server/public --config ./webpack.config.js",
+    "start": "webpack | nodemon start.js",
+    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js"
   },
   "keywords": [
     "koa2-boilerplate",
@@ -55,6 +57,7 @@
     "nodemon": "^1.10.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-hot-loader": "^1.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",

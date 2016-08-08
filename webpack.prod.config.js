@@ -3,14 +3,9 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var path = require('path');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+ 
   entry: {
-      
-    main : [
-      'webpack-hot-middleware/client?http:localhost:9000',
-      'webpack/hot/only-dev-server',
-      './app/index'
-    ],
+    main : './app/index',
     vendor : [
       'react',
       'redux',
@@ -20,17 +15,20 @@ module.exports = {
     ]
   },
   output: {
-    publicPath: "http://0.0.0.0:9000/assets/",
     path: path.join(__dirname, 'src/public/assets'),
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: 'http://localhost:3000/static/',
   },
   plugins: [
     
      new webpack.optimize.CommonsChunkPlugin('vendor', './vendor.bundle.js'),
-     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"development"'
-     }),
-     new webpack.HotModuleReplacementPlugin()
+     new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        //supresses warnings, usually from module minification
+        warnings: false
+      }
+    })
+    
   ],
   module: {
     loaders: [

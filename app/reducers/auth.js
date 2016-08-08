@@ -14,7 +14,7 @@ const auth = (state = [], action) => {
                 async : true,
                 success: function(data, status, xhr) {
                     if(data.status == 400) {
-                        alert('Login errro')
+                        alert('Login errro, username/password is test/test')
                     } else {
                         alert('Login Success')
                     }
