@@ -15,7 +15,6 @@ class App extends React.Component {
     return (
           <Router history={appHistory} >
               <Route path='/' component={LoginContainer}/>
-              <Route path='/' component={LoginContainer}/>
               <Route path='/signup' component={LoginContainer}/>
               <Route path='/main' component={DashboardContainer}/>
           </Router>

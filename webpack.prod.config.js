@@ -27,7 +27,11 @@ module.exports = {
         //supresses warnings, usually from module minification
         warnings: false
       }
-    })
+     }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+    }})
     
   ],
   module: {

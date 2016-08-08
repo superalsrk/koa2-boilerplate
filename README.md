@@ -28,37 +28,7 @@ $ npm run start
 ![Login Page](./src/public/assets/img/screenshots/koa-2-login-osx.jpeg)
 
 
-### Structure
+### License
 
-```bash
-.
-├── README.md
-├── app
-│   └── entry.js
-├── package.json
-├── src
-│   ├── app.js
-│   ├── config
-│   │   ├── base.js
-│   │   ├── config.js
-│   │   └── passport.js
-│   ├── lib
-│   │   └── db.js
-│   ├── middleware
-│   │   ├── checkauth.js
-│   │   └── index.js
-│   ├── models
-│   │   └── account.js
-│   ├── public
-│   │   └── index.html
-│   └── routes
-│       ├── auth.js
-│       ├── index.js
-│       ├── main.js
-│       └── open.js
-├── start.js
-└── webpack.config.js
-```
-
-
+MIT
 
