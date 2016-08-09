@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { submitForm } from '../actions';
+ 
+import Github from '../components/Github';
 
 class LoginContainer extends React.Component {
     onSubmit(event) {
@@ -11,8 +13,12 @@ class LoginContainer extends React.Component {
     
     render() {
         return (
-        
+            
             <div className="login login-with-news-feed">
+
+            
+                <Github/>
+
             
                 <div className="news-feed">
                     <div className="news-image">

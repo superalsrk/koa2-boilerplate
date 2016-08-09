@@ -57,6 +57,7 @@
     "nodemon": "^1.10.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-github-fork-ribbon": "^0.4.4",
     "react-hot-loader": "^1.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
