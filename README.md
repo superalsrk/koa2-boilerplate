@@ -9,6 +9,7 @@ This boilerplate shows ways to
 + Export excel in Koa2, based on [excel-export](https://github.com/functionscope/Node-Excel-Export)
 + Serve static files in Koa2
 + Integrate with Redux App
++ Bind D3.js with Redux and Koa2
 
 ### Preview
 
