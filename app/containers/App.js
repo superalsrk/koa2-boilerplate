@@ -17,9 +17,8 @@ class App extends React.Component {
 
     return (
           <Router history={history} >
-        
-              <Route path='/' component={LoginContainer}/>
-              <Route path='/signup' component={LoginContainer}/>
+              <Redirect from="/" to="/main" />
+              <Route path='/signin' component={LoginContainer}/>
               <Route path='/main' component={DashboardContainer}/>
               <Route name='404' path='/404' component={ExceptionComponent}/>
               <Redirect from="*" to="404" />

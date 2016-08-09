@@ -2,11 +2,23 @@ import * as types from '../constants/ActionTypes';
 import $ from 'jquery';
 import history from '../store/history';
 
-export function submitForm(authinfo) {
-    console.log("AUTH LOGIN Action", authinfo)
-    return {
-        type : types.AUTH_LOGIN,
-        authinfo
+import 'whatwg-fetch';
+
+export function checkAuth() {
+    return dispatch => {
+        fetch('/auth/status',  {
+                credentials: 'same-origin'
+            })
+            .then( tresponse => {
+                return tresponse.json()
+            })
+            .then( tjson => {
+
+                console.log(tjson)
+                if(tjson.isLogin == false) {
+                    history.pushState(null, '/signin')
+                }
+            })
     }
 }
 
@@ -20,9 +32,13 @@ export function authUser(authinfo) {
                 success: function(data, status, xhr) {
                     if(data.status == 400) {
                         alert('Login errro, username/password is test/test')
-                        dispatch(authFailed())
+                        dispatch({
+                            type : types.AUTH_FAILED
+                        })
                     } else {
-                        dispatch(authSuccess())
+                        dispatch({
+                            type : types.AUTH_SUCCESS
+                        })
                         history.pushState(null, '/main')
                     }
                 },
@@ -31,22 +47,7 @@ export function authUser(authinfo) {
                 },
                 crossDomain: true
         });
-
-       
     }
 }
-
-export function authSuccess() {
-    return {
-        type : types.AUTH_SUCCESS
-    }
-}
-
-export function authFailed() {
-    return {
-        type : types.AUTH_FAILED
-    }
-}
-
 
 

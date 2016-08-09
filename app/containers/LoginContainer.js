@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { authUser, authSuccess, authFailed } from '../actions/authed';
+import { authUser } from '../actions/authed';
  
 import Github from '../components/Github';
 
