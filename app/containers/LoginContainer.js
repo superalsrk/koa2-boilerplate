@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { submitForm } from '../actions';
+import { authUser, authSuccess, authFailed } from '../actions/authed';
  
 import Github from '../components/Github';
 
@@ -8,18 +8,18 @@ class LoginContainer extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         console.log('submit')
-        this.props.dispatch(submitForm({username:this.refs.username.value, password :this.refs.password.value}))   
+        this.props.dispatch(authUser({username:this.refs.username.value, password :this.refs.password.value}))   
+    }
+    
+    componentDidMount() {
+        console.log('component DidMount login container')
     }
     
     render() {
         return (
             
-            <div className="login login-with-news-feed">
-
-            
+            <div className="login login-with-news-feed bg-white">
                 <Github/>
-
-            
                 <div className="news-feed">
                     <div className="news-image">
                         <img src="assets/img/login-bg/bg-7.jpg" data-id="login-cover-image" alt="" />

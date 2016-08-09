@@ -2,21 +2,27 @@ import React from 'react'
 
 import LoginContainer from '../containers/LoginContainer';
 import DashboardContainer from '../containers/DashboardContainer';
+import ExceptionComponent from '../components/Exception';
 
-import { Router, Route, useRouterHistory} from 'react-router';
-import { createHashHistory } from 'history';
-
-const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
+import { Router, Route , Redirect} from 'react-router';
+import history from '../store/history';
 
 class App extends React.Component {
+
+  componentDidMount() {
+        console.log('component DidMount APP')
+  }
 
   render() {
 
     return (
-          <Router history={appHistory} >
+          <Router history={history} >
+        
               <Route path='/' component={LoginContainer}/>
               <Route path='/signup' component={LoginContainer}/>
               <Route path='/main' component={DashboardContainer}/>
+              <Route name='404' path='/404' component={ExceptionComponent}/>
+              <Redirect from="*" to="404" />
           </Router>
     )
   }
