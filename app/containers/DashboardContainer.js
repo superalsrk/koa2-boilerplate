@@ -7,7 +7,9 @@ import Leftbar from '../components/Leftbar';
 import Github from '../components/Github';
 
 class DashboardContainer extends React.Component {
-
+    componentDidMount() {
+        document.body.classList.remove('bg-white')
+    }
 
     render() {
         return (
@@ -21,6 +23,5 @@ class DashboardContainer extends React.Component {
         )
     }
 }
-
 
 export default connect()(DashboardContainer)

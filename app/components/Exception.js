@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import GitHubForkRibbon from 'react-github-fork-ribbon';
 
 class Exception extends React.Component {
+  componentDidMount() {
+        document.body.classList.remove('bg-white')
+  }
 
   render() {
     return (
