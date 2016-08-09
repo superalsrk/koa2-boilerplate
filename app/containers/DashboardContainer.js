@@ -24,7 +24,7 @@ class DashboardContainer extends React.Component {
     render() {
         return (
             <div>
-            
+                <Github/>
                 <Header/>
                 <Leftbar/>
                 <div className="sidebar-bg"></div>
