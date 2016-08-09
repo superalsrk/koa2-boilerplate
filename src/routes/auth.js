@@ -30,9 +30,7 @@ router.post('/login', async (ctx, next) => {
 
 router.get('/logout', async (ctx, newt) => {
     ctx.logout()
-    ctx.body = {
-        "status" : 200
-    }
+    ctx.redirect('/')
 })
 
 router.get('/status', async (ctx, next) => {

@@ -13,6 +13,9 @@ class LoginContainer extends React.Component {
     
     componentDidMount() {
         console.log('component DidMount login container')
+        document.body.classList.add('bg-white')
+        document.getElementById('page-container').classList.remove('page-sidebar-fixed')
+        document.getElementById('page-container').classList.remove('page-header-fixed')
     }
     
     render() {

@@ -14,6 +14,14 @@ class Header extends React.Component {
 						    <span className="icon-bar"></span>
 					    </button>
 				    </div>
+
+						<ul className="nav navbar-nav navbar-right">
+							<li className="dropdown navbar-user">
+								<a href="/auth/logout" className="dropdown-toggle" data-toggle="dropdown">
+									<span className="hidden-xs">LOGOUT</span> 
+								</a>			
+							</li>
+						</ul>
 			    </div>
 		    </div>
     )
