@@ -22,7 +22,7 @@ class LoginContainer extends React.Component {
                 <Github/>
                 <div className="news-feed">
                     <div className="news-image">
-                        <img src="assets/img/login-bg/bg-7.jpg" data-id="login-cover-image" alt="" />
+                        <img src="http://mirror.tarax.cn/coloradmin/assets/img/login-bg/bg-7.jpg" data-id="login-cover-image" alt="" />
                     </div>
                     <div className="news-caption">
                         <h4 className="caption-title"><i className="fa fa-diamond text-success"></i> Announcing the Color Admin app</h4>
