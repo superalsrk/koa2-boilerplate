@@ -9,7 +9,7 @@ This boilerplate shows ways to
 + Export excel in Koa2, based on [excel-export](https://github.com/functionscope/Node-Excel-Export)
 + Serve static files in Koa2
 + Integrate with Redux App
-+ Bind D3.js with Redux and Koa2
++ Use charts(D3.js, Echarts, plot) library in Redux App
 
 ### Preview
 
@@ -28,6 +28,9 @@ $ npm run start
 
 ![Login Page](./src/public/assets/img/screenshots/koa-2-login-osx.jpeg)
 
++ Dashboard
+
+![Dashboard](./src/public/assets/img/screenshots/koa-2-dashboard.jpeg)
 
 ### License
 

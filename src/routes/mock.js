@@ -1,6 +1,7 @@
 'use strict';
 
 import Router from 'koa-router';
+import NodeExcel from 'excel-export';
 
 const router = new Router();
 
@@ -16,6 +17,37 @@ router.get('/summary', async (ctx, next) => {
         }
     }
 })
+
+router.get('/export/pv', async (ctx, next) => {
+    let conf = {}
+    conf.cols = [{
+        caption:'Header',
+        type:'string',
+        width: 145
+    }]
+    
+    conf.rows = [['value01'], ['value02'], ['value03']] 
+    
+    ctx.type = 'application/vnd.openxmlformats'
+    ctx.attachment( "Report-PV.xlsx")
+    ctx.body = new Buffer(NodeExcel.execute(conf), 'binary')
+})
+
+router.get('/export/uv', async (ctx, next) => {
+    let conf = {}
+    conf.cols = [{
+        caption:'Header',
+        type:'string',
+        width: 145
+    }]
+    
+    conf.rows = [['value01'], ['value02'], ['value03']] 
+    
+    ctx.type = 'application/vnd.openxmlformats'
+    ctx.attachment( "Report-UV.xlsx")
+    ctx.body = new Buffer(NodeExcel.execute(conf), 'binary')
+})
+
 
 router.get('/linechart', async (ctx, next) => {
     ctx.body = {
