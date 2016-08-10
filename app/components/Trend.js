@@ -1,31 +1,37 @@
 import React, { PropTypes } from 'react';
+import { fetchMainChartData } from '../actions/main';
 
 class Trend extends React.Component {
 
   componentDidMount() {
-      var chartDiv = this.refs.interchart;
-      var t = [[1, 40], [2, 50], [3, 60], [4, 60], [5, 60], [6, 65], [7, 75], [8, 90], [9, 100], [10, 105], [11, 110], [12, 110], [13, 120], [14, 130], [15, 135], [16, 145], [17, 132], [18, 123], [19, 135], [20, 150]];
-      var n = [[1, 10], [2, 6], [3, 10], [4, 12], [5, 18], [6, 20], [7, 25], [8, 23], [9, 24], [10, 25], [11, 18], [12, 30], [13, 25], [14, 25], [15, 30], [16, 27], [17, 20], [18, 18], [19, 31], [20, 23]];
-      var r = [[1, ""], [2, ""], [3, "May&nbsp;15"], [4, ""], [5, ""], [6, "May&nbsp;19"], [7, ""], [8, ""], [9, "May&nbsp;22"], [10, ""], [11, ""], [12, "May&nbsp;25"], [13, ""], [14, ""], [15, "May&nbsp;28"], [16, ""], [17, ""], [18, "May&nbsp;31"], [19, ""], [20, ""]];
-     var blue = "#348fe2"
-  , blueLight = "#5da5e8"
-  , blueDark = "#1993E4"
-  , aqua = "#49b6d6"
-  , aquaLight = "#6dc5de"
-  , aquaDark = "#3a92ab"
-  , green = "#00acac"
-  , greenLight = "#33bdbd"
-  , greenDark = "#008a8a"
-  , orange = "#f59c1a"
-  , orangeLight = "#f7b048"
-  , orangeDark = "#c47d15"
-  , dark = "#2d353c"
-  , grey = "#b6c2c9"
-  , purple = "#727cb6"
-  , purpleLight = "#8e96c5"
-  , purpleDark = "#5b6392"
-  , red = "#ff5b57";
-      $.plot(chartDiv, [{
+        //this.renderChart()
+        this.props.dispatch(fetchMainChartData())
+  }
+
+  componentDidUpdate(prevProps) {
+        console.log('Did update', prevProps, this.props)
+
+        if(prevProps.main.pv && prevProps.main.pv === this.props.main.pv) {
+            return
+        }
+
+        this.renderChart(this.props.main.pv, this.props.main.uv, this.props.main.legends)
+        
+  }
+
+
+
+  renderChart(pv=[], uv=[], legends=[]) {
+        var chartDiv = this.refs.interchart;
+ 
+        var t = pv;
+        var n = uv;
+        var r = legends;
+   
+        const blue = "#348fe2"
+        const green = "#00acac";
+
+    $.plot(chartDiv, [{
             data: t,
             label: "Page Views",
             color: blue,
@@ -65,7 +71,7 @@ class Trend extends React.Component {
                 ticks: 10,
                 tickColor: "#ddd",
                 min: 0,
-                max: 200
+                max: 400
             },
             grid: {
                 hoverable: true,
@@ -83,7 +89,6 @@ class Trend extends React.Component {
             }
         });
   }
-
 
   render() {
     return (

@@ -33,7 +33,7 @@ class DashboardContainer extends React.Component {
                 <div className="content">
                     <h1 className="page-header">Dashboard <small>header small text goes here...</small></h1>
                     <Summary summary={this.props.summary} {...this.props} />
-                    <Trend/>
+                    <Trend {...this.props} />
                 </div> 
             </div>
         )

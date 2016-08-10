@@ -15,7 +15,7 @@ export function checkAuth() {
             .then( tjson => {
 
                 if(tjson.isLogin == false) {
-                    history.pushState(null, '/signin')
+                    history.push('/signin')
                 }
             })
     }
@@ -38,7 +38,7 @@ export function authUser(authinfo) {
                         dispatch({
                             type : types.AUTH_SUCCESS
                         })
-                        history.pushState(null, '/main')
+                        history.push('/main')
                     }
                 },
                 xhrFields: {

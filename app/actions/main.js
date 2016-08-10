@@ -19,3 +19,21 @@ export function fetchSummaryData() {
             })
     }
 }
+
+export function fetchMainChartData() {
+    return dispatch => {
+        fetch('/mock/linechart', {
+            credentials: 'same-origin'
+        })
+        .then( tresponse => {
+                return tresponse.json()
+        })
+        .then( tjson => {
+
+            dispatch({
+                type : types.MAIN_RECEIVE_LINECHART,
+                data : tjson.data
+            })
+        })
+    }
+}
