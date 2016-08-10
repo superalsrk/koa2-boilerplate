@@ -13,7 +13,8 @@
     "koa2 export excel",
     "koa2 login with passport.js",
     "koa2 cors rest request",
-    "koa2 with redux"
+    "koa2 with redux",
+    "koa2 with docker"
   ],
   "author": "SRK.Lyu <superalsrk@gmail.com> (http://stackbox.org)",
   "license": "MIT",

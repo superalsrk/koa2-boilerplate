@@ -10,6 +10,7 @@ This boilerplate shows ways to
 + Serve static files in Koa2
 + Integrate with Redux App
 + Use charts(D3.js, Echarts, plot) library in Redux App
++ Deploy Koa2 app with docker
 
 ### Preview
 
