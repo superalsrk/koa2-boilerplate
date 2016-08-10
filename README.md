@@ -23,6 +23,11 @@ $ npm install
 $ npm run start
 ```
 
+### Develop & Deploy
+
++ [中文版](https://github.com/superalsrk/koa2-boilerplate/wiki/develop-and-deploy.md)
++ [English](https://github.com/superalsrk/koa2-boilerplate/wiki/develop-and-deploy-en.md)
+
 ## Screenshots
 
 + Login Page
