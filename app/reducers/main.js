@@ -2,10 +2,10 @@ import * as types from '../constants/ActionTypes';
 
 const initState = {
    
-        avgTime : '-1',
-        bounceRate : '-1',
-        totalVisitors : '-1',
-        uniqueVisitors : '-1',
+        avgTime : '0',
+        bounceRate : '0',
+        totalVisitors : '0',
+        uniqueVisitors : '0',
         uv : [],
         pv : [],
         legends : []
