@@ -103,8 +103,8 @@ class Trend extends React.Component {
 							<div id="interactive-chart" className="height-sm" ref="interchart"></div>
 						</div>
                         <div className="panel-footer text-right">
-                            <a href="/mock/export/uv" className="btn btn-info btn-sm" target="_blank">Export UV</a>
-                            <a href="/mock/export/pv" className="btn btn-primary btn-sm m-l-5" target="_blank">Export PV</a>
+                            <a href="/mock/export/uv" className="btn btn-info btn-sm">Export UV</a>
+                            <a href="/mock/export/pv" className="btn btn-primary btn-sm m-l-5">Export PV</a>
                         </div>
 				</div>
             </div>

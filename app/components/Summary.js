@@ -1,8 +1,23 @@
 import React, { PropTypes } from 'react';
+import { fetchSummaryData } from '../actions/main';
+
+
+
+const propTypes = {
+  dispatch: PropTypes.func.isRequired
+};
 
 class Summary extends React.Component {
 
+  componentDidMount() {
+			const { dispatch } = this.props;
+			dispatch(fetchSummaryData())
+  }
+
   render() {
+	
+		const main = this.props.main;
+		console.log('render props', main)
     return (
         <div className="row">
 				<div className="col-md-3 col-sm-6">
@@ -10,7 +25,7 @@ class Summary extends React.Component {
 						<div className="stats-icon"><i className="fa fa-desktop"></i></div>
 						<div className="stats-info">
 							<h4>TOTAL VISITORS</h4>
-							<p>3,291,922</p>	
+							<p> { this.props.main.totalVisitors } </p>	
 						</div>
 						<div className="stats-link">
 							<a href="javascript:;">View Detail <i className="fa fa-arrow-circle-o-right"></i></a>
@@ -23,7 +38,7 @@ class Summary extends React.Component {
 						<div className="stats-icon"><i className="fa fa-chain-broken"></i></div>
 						<div className="stats-info">
 							<h4>BOUNCE RATE</h4>
-							<p>20.44%</p>	
+							<p> { this.props.main.bounceRate } </p>	
 						</div>
 						<div className="stats-link">
 							<a href="javascript:;">View Detail <i className="fa fa-arrow-circle-o-right"></i></a>
@@ -36,7 +51,7 @@ class Summary extends React.Component {
 						<div className="stats-icon"><i className="fa fa-users"></i></div>
 						<div className="stats-info">
 							<h4>UNIQUE VISITORS</h4>
-							<p>1,291,922</p>	
+							<p> { this.props.main.uniqueVisitors } </p>	
 						</div>
 						<div className="stats-link">
 							<a href="javascript:;">View Detail <i className="fa fa-arrow-circle-o-right"></i></a>
@@ -49,7 +64,7 @@ class Summary extends React.Component {
 						<div className="stats-icon"><i className="fa fa-clock-o"></i></div>
 						<div className="stats-info">
 							<h4>AVG TIME ON SITE</h4>
-							<p>00:12:23</p>	
+							<p> { this.props.main.avgTime } </p>	
 						</div>
 						<div className="stats-link">
 							<a href="javascript:;">View Detail <i className="fa fa-arrow-circle-o-right"></i></a>
@@ -61,4 +76,5 @@ class Summary extends React.Component {
   }
 }
 
+Summary.propTypes = propTypes;
 export default Summary

@@ -22,6 +22,8 @@ class DashboardContainer extends React.Component {
     }
 
     render() {
+
+        console.log(this.state)
         return (
             <div>
                 <Github/>
@@ -31,7 +33,7 @@ class DashboardContainer extends React.Component {
                 
                 <div className="content">
                     <h1 className="page-header">Dashboard <small>header small text goes here...</small></h1>
-                    <Summary/>
+                    <Summary summary={this.props.summary} {...this.props} />
                     <Trend/>
                 </div> 
             </div>
@@ -39,4 +41,12 @@ class DashboardContainer extends React.Component {
     }
 }
 
-export default connect()(DashboardContainer)
+
+function mapStateToProps(state) {
+    console.log("map state to props", state)
+    return {
+        main : state.main
+    }
+}
+
+export default connect(mapStateToProps)(DashboardContainer)
