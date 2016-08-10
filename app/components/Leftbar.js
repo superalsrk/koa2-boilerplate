@@ -31,10 +31,11 @@ class Leftbar extends React.Component {
 						<a href="javascript:;">
 						    <b className="caret pull-right"></b>
 							<i className="fa fa-star"></i> 
-							<span>Front End</span>
+							<span>Widget</span>
 						</a>
 						<ul className="sub-menu">
 						    <li><a href="../../frontend/one-page-parallax/index.html" target="_blank">One Page Parallax</a></li>
+							<li><a href="../../frontend/one-page-parallax/index.html" target="_blank">One Page Parallax</a></li>	
 						</ul>
 					</li>
                 </ul>

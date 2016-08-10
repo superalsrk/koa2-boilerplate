@@ -13,8 +13,6 @@ const initState = {
 const main = (state = initState, action) => {
     switch(action.type) {
         case types.MAIN_RECEIVE_SUMMARY: {
-            console.log('reducer main summray', action, state)
-    
             return Object.assign({}, state, {
                 avgTime : action.data.avgTime,
                 bounceRate : action.data.bounceRate,

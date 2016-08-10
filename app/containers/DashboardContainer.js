@@ -23,7 +23,6 @@ class DashboardContainer extends React.Component {
 
     render() {
 
-        console.log(this.state)
         return (
             <div>
                 <Github/>
@@ -43,7 +42,7 @@ class DashboardContainer extends React.Component {
 
 
 function mapStateToProps(state) {
-    console.log("map state to props", state)
+
     return {
         main : state.main
     }

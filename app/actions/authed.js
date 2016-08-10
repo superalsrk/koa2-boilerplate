@@ -14,7 +14,6 @@ export function checkAuth() {
             })
             .then( tjson => {
 
-                console.log(tjson)
                 if(tjson.isLogin == false) {
                     history.pushState(null, '/signin')
                 }

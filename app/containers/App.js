@@ -10,7 +10,7 @@ import history from '../store/history';
 class App extends React.Component {
 
   componentDidMount() {
-        console.log('component DidMount APP')
+        
   }
 
   render() {

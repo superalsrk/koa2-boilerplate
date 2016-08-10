@@ -16,8 +16,7 @@ class Summary extends React.Component {
 
   render() {
 	
-		const main = this.props.main;
-		console.log('render props', main)
+
     return (
         <div className="row">
 				<div className="col-md-3 col-sm-6">

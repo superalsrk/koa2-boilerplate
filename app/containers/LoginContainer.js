@@ -7,12 +7,10 @@ import Github from '../components/Github';
 class LoginContainer extends React.Component {
     onSubmit(event) {
         event.preventDefault();
-        console.log('submit')
         this.props.dispatch(authUser({username:this.refs.username.value, password :this.refs.password.value}))   
     }
     
     componentDidMount() {
-        console.log('component DidMount login container')
         document.body.classList.add('bg-white')
         document.getElementById('page-container').classList.remove('page-sidebar-fixed')
         document.getElementById('page-container').classList.remove('page-header-fixed')
