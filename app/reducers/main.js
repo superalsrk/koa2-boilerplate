@@ -8,7 +8,9 @@ const initState = {
         uniqueVisitors : '0',
         uv : [],
         pv : [],
-        legends : []
+        legends : [],
+
+        chartShow : true
     
 }
 
@@ -29,6 +31,12 @@ const main = (state = initState, action) => {
                 uv : action.data.uv,
                 pv : action.data.pv,
                 legends : action.data.legends
+            })
+        }
+
+        case types.MAIN_LINECHART_DELETED : {
+            return Object.assign({}, state, {
+                chartShow : false
             })
         }
            

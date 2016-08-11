@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import { fetchMainChartData } from '../actions/main';
+import { fetchMainChartData , deleteLineChart } from '../actions/main';
+import ReactDOM from 'react-dom';
 
 class Trend extends React.Component {
 
@@ -90,31 +91,37 @@ class Trend extends React.Component {
         });
   }
 
+
   render() {
-    return (
-        <div className="row">
-            <div className="col-md-12">
-                <div className="panel panel-inverse" data-sortable-id="index-1">
-						<div className="panel-heading">
-							<div className="panel-heading-btn">
-								<a href="javascript:;" className="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i className="fa fa-expand"></i></a>
-								<a href="javascript:;" className="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i className="fa fa-repeat"></i></a>
-								<a href="javascript:;" className="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i className="fa fa-minus"></i></a>
-								<a href="javascript:;" className="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i className="fa fa-times"></i></a>
-							</div>
-							<h4 className="panel-title">Website Analytics (Last 7 Days)</h4>
-						</div>
-						<div className="panel-body">
-							<div id="interactive-chart" className="height-sm" ref="interchart"></div>
-						</div>
-                        <div className="panel-footer text-right">
-                            <a href="/mock/export/uv" className="btn btn-info btn-sm">Export UV</a>
-                            <a href="/mock/export/pv" className="btn btn-primary btn-sm m-l-5">Export PV</a>
-                        </div>
-				</div>
+
+    if(this.props.main.chartShow) {
+        return (
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="panel panel-inverse" data-sortable-id="index-1">
+                            <div className="panel-heading">
+                                <div className="panel-heading-btn">
+                                    <a href="javascript:;" className="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i className="fa fa-repeat" onClick={() => this.props.dispatch(fetchMainChartData())}></i></a>
+                                    <a href="javascript:;" className="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i className="fa fa-times" onClick={() => this.props.dispatch(deleteLineChart())}></i></a>
+                                </div>
+                                <h4 className="panel-title">Website Analytics (Last 7 Days)</h4>
+                            </div>
+                            <div className="panel-body">
+                                <div id="interactive-chart" className="height-sm" ref="interchart"></div>
+                            </div>
+                            <div className="panel-footer text-right">
+                                <a href="/mock/export/uv" className="btn btn-info btn-sm">Export UV</a>
+                                <a href="/mock/export/pv" className="btn btn-primary btn-sm m-l-5">Export PV</a>
+                            </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div></div>
+        )
+    }
   }
 }
 

@@ -37,3 +37,9 @@ export function fetchMainChartData() {
         })
     }
 }
+
+export function deleteLineChart() {
+    return {
+        type : types.MAIN_LINECHART_DELETED,
+    }
+}
