@@ -23,6 +23,10 @@ router.use('/auth', RouterAuth.routes(), RouterAuth.allowedMethods())
 router.use('/open', RouterOpen.routes(), RouterOpen.allowedMethods())
 router.use('/mock', RouterMock.routes(), RouterMock.allowedMethods())
 
+router.get('*', async (ctx, next) => {
+    ctx.body = { status : 404 }
+})
+
 export default function routes() {
     return compose(
         [
