@@ -4,9 +4,8 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js",
-    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js",
-    "start": "webpack | nodemon start.js"
+    "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js | nodemon start.js",
+    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js"
   },
   "keywords": [
     "koa2-boilerplate",
@@ -37,12 +36,14 @@
     "koa-redis": "^2.1.1",
     "koa-router": "^7.0.1",
     "koa-static": "^2.0.0",
+    "koa-views": "^5.0.2",
     "lodash": "^4.14.1",
     "mysql": "^2.11.1",
     "node-excel": "^0.5.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "request": "^2.73.0"
+    "request": "^2.73.0",
+    "swig": "^1.4.2"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",

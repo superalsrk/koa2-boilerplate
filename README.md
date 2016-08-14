@@ -20,7 +20,7 @@ This boilerplate shows ways to
 
 ```
 $ npm install 
-$ npm run start
+$ npm run dev
 ```
 
 ### Develop & Deploy

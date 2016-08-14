@@ -21,8 +21,12 @@
 
     <script src="http://mirror.tarax.cn/coloradmin/assets/plugins/flot/jquery.flot.min.js"></script>
 
+    {% if process.env.NODE_ENV !== "development" %}
     <script src="assets/vendor.bundle.js"></script>
     <script src="assets/main.js"></script>
+    {% else %}
+    <script src="http://localhost:9000/assets/vendor.bundle.js"></script>
+    <script src="http://localhost:9000/assets/main.js"></script>
+    {% endif %}
   </body>
 </html>
-

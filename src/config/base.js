@@ -8,7 +8,7 @@ import Logger from 'koa-logger';
 import mount from 'koa-mount';
 import bodyParser from 'koa-bodyparser';
 import session from 'koa-generic-session';
-
+import views from 'koa-views';
 
 import _ from './passport';
 import passport from 'koa-passport';
@@ -27,5 +27,7 @@ export default function middleware(app) {
 
     app.use(passport.initialize())
     app.use(passport.session())
+    
+    app.use(views(__dirname + '/../views', {extension: 'swig'}))
 
 }
