@@ -1,6 +1,9 @@
 koa2-boilerplate
 ====
 
+
+![MIT](https://img.shields.io/npm/l/express.svg) ![node version](https://img.shields.io/badge/node-v6.3.0-green.svg) ![docker build](https://img.shields.io/docker/automated/superalsrk/koa2-boilerplate.svg)
+
 This boilerplate shows ways to 
 
 + Use mysql in Koa2
