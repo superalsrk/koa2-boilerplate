@@ -23,6 +23,13 @@ $ npm install
 $ npm run dev
 ```
 
+You can also use docker to start this boilerplate
+
+```
+$ docker pull superalsrk/koa2-boilerplate
+$ docker run -d -p 5000:5000 superalsrk/koa2-boilerplate
+```
+
 ### Develop & Deploy
 
 + [中文版](https://github.com/superalsrk/koa2-boilerplate/wiki/develop-and-deploy.md)
