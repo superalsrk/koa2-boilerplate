@@ -1,8 +1,7 @@
 koa2-boilerplate
 ====
 
-
-![MIT](https://img.shields.io/npm/l/express.svg) ![node version](https://img.shields.io/badge/node-v6.3.0-green.svg) ![docker build](https://img.shields.io/docker/automated/superalsrk/koa2-boilerplate.svg)
+![MIT](https://img.shields.io/npm/l/express.svg) ![node version](https://img.shields.io/badge/node-v6.3.0-green.svg) [![docker build](https://img.shields.io/docker/automated/superalsrk/koa2-boilerplate.svg)](https://hub.docker.com/r/superalsrk/koa2-boilerplate/builds/)
 
 This boilerplate shows ways to 
 
