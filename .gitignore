@@ -150,3 +150,5 @@ fabric.properties
 # .idea/misc.xml 
 # *.ipr
 vendor.bundle.js
+
+mochawesome-reports

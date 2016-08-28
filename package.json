@@ -5,7 +5,8 @@
   "main": "start.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --hot --host 0.0.0.0 --port 9000 --content-base ./server/public --config ./webpack.config.js | nodemon start.js",
-    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js"
+    "build": "NODE_ENV=production webpack -p --config ./webpack.prod.config.js",
+    "test": "mocha --compilers js:babel-core/register --require babel-polyfill"
   },
   "keywords": [
     "koa2-boilerplate",
@@ -56,6 +57,8 @@
     "css-loader": "^0.23.1",
     "file-loader": "^0.9.0",
     "jquery": "^3.1.0",
+    "mocha": "^3.0.2",
+    "mochawesome": "^1.5.1",
     "nodemon": "^1.10.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
@@ -69,7 +72,9 @@
     "redux-router": "^1.0.0",
     "redux-thunk": "^2.1.0",
     "serve-favicon": "^2.3.0",
+    "should": "^11.1.0",
     "style-loader": "^0.13.1",
+    "supertest": "^2.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",

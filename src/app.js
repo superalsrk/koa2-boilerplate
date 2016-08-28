@@ -19,3 +19,5 @@ app.use(routes())
 
 app.listen(config.app.port);
 console.log("Server started, listening on port: " + config.app.port);
+
+export default app

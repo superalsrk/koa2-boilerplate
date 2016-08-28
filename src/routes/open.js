@@ -20,4 +20,10 @@ router.get('/export', async (ctx, next) => {
     ctx.body = new Buffer(NodeExcel.execute(conf), 'binary')
 })
 
+router.get('/test', async(ctx, next) => {
+    ctx.body = {
+        'status' : 'done'
+    }
+})
+
 export default router;
