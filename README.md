@@ -20,9 +20,17 @@ This boilerplate shows ways to
 
 ### Usage
 
-```
+```bash
 $ npm install 
+
+# Start application
 $ npm run dev
+
+# Run test cases
+$ npm run test
+
+# Generate test report
+$ npm run report
 ```
 
 You can also use docker to start this boilerplate
