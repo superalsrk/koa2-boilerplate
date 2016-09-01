@@ -32,7 +32,7 @@ export default function middleware(app) {
     app.use(bodyParser())
     app.use(mount("/", convert(Serve(__dirname + '/../public/'))));
 
-    app.keys = ['miaozhen-session-key'];
+    app.keys = ['superalsrk-session-key'];
     app.use(convert(session()))
 
     app.use(passport.initialize())
