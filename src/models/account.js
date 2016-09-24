@@ -1,7 +1,10 @@
 'use strict';
 
-import db from '../lib/db'
+import db from '../lib/db';
+import log4js from 'log4js';
+
 const Account = {}
+const LOG = log4js.getLogger('file');
 
 Account.findOne = function (id, cb) {
     // db.queryAsync('select * from t_account where id = ?', [id], function(err, results) {
@@ -20,6 +23,11 @@ Account.findOne = function (id, cb) {
 Account.verify = async function(username, password) {
 
     //let account = await db.query('select * from t_account where email = ?', [username])
+
+    LOG.warn(JSON.stringify({
+        'username' : username,
+        'password' : password
+    }))
 
     //Mock Scripts
     let account = [{"id": 1, "username" : "test", "password" : "test"}]

@@ -13,16 +13,26 @@ import views from 'koa-views';
 import _ from './passport';
 import passport from 'koa-passport';
 
+import log4js from 'log4js';
+
 export default function middleware(app) {
 
     app.proxy = true;
+
+    log4js.configure({
+        appenders: [
+            { type: 'console' },
+            { type: 'dateFile', filename: __dirname + '/../tmp/boilerplate.log' , "pattern":"-yyyy-MM-dd-hh.log","alwaysIncludePattern":false, category: 'file' }
+        ],
+        replaceConsole: true
+    });
 
     app.use(cors({ credentials: true }));
     app.use(convert(Logger()))
     app.use(bodyParser())
     app.use(mount("/", convert(Serve(__dirname + '/../public/'))));
 
-    app.keys = ['miaozhen-session-key'];
+    app.keys = ['superalsrk-session-key'];
     app.use(convert(session()))
 
     app.use(passport.initialize())
